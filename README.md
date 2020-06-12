@@ -1,3 +1,11 @@
+Ticket Management System
+
+A site where User can raise a ticket, which can then be assigned to be taken care of and responded within a certain time. 
+Includes :-
+1. Dashboard that displays graphical representations on the nature of overall tickets.
+2. Functionality via which tickets can be responded to and resolved.
+3. Functionality to create new Profiles of Companies. 
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
