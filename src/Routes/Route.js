@@ -1,6 +1,8 @@
 import React from 'react'
 import Home from '../Components/Big/Home'
 import TicketPage from '../Components/Big/TicketPage'
+import RaiseTicketForm from '../Components/Big/RaiseTicketForm'
+import RespondTicketPage from '../Components/Big/RespondTicketPage'
 //import Dashboard from '../Components/Big/Dashboard'
 import { Switch , Route } from 'react-router'
 
@@ -14,6 +16,9 @@ export default function Routing(){
 
             <Route path="/dashboard" exact render={(props)=><Dashboard {...props}/>}/>
 
+            <Route path="/raise" exact render={(props) => <RaiseTicketForm {...props}/> } />
+
+            <Route path="/respond" exact render={(props) => <RespondTicketPage {...props}/> } />
         </Switch>
     )
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Card, CardContent, CardActionArea, Typography, CardActions, Button } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles';
+import { Link } from 'react-router-dom'
 
 
 const useStyles = makeStyles({
@@ -34,9 +35,12 @@ export default function CompanyCard({company}){
             </CardContent>
             </CardActionArea>
             <CardActions>
-            <Button size="small" color="primary">
+            <Link to={{pathname: "/raise",
+                       state : company}}>
+                <Button size="small" color="primary">
                     Raise Ticket
-            </Button>
+                </Button>
+            </Link>
             </CardActions>
         </Card>
     )

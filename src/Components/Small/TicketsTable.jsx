@@ -10,6 +10,8 @@ import TableFooter from '@material-ui/core/TableFooter';
 import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import { Link } from 'react-router-dom'
+
 
 const useStyles = makeStyles({
     table: {
@@ -34,15 +36,15 @@ export default function TicketsTable({tickets}){
     }
 
     return (
-        <TableContainer component={Paper}>
+        <TableContainer component={Paper} style={tableStyle}>
             <Table className={classes.table}>
             <TableHead>
           <TableRow>
             <TableCell>ID</TableCell>
-            <TableCell align="right">Title</TableCell>
-            <TableCell align="right">Company</TableCell>
-            <TableCell align="right">Status</TableCell>
-            <TableCell align="right">Raised On</TableCell>
+            <TableCell>Title</TableCell>
+            <TableCell>Company</TableCell>
+            <TableCell>Status</TableCell>
+            <TableCell>Raised On</TableCell>
           </TableRow>
         </TableHead>
                 <TableBody>
@@ -55,15 +57,16 @@ export default function TicketsTable({tickets}){
                 {ticket.id}
               </TableCell>
               <TableCell component="th" scope="row">
-                {ticket.title}
+                <Link to={{pathname:"/respond",
+                            state : ticket}}>{ticket.title}</Link>  
               </TableCell>
-              <TableCell style={{ width: 160 }} align="right">
+              <TableCell style={{ width: 160 }} >
                 {ticket.company}
               </TableCell>
-              <TableCell style={{ width: 160 }} align="right">
+              <TableCell style={{ width: 160 }} >
                 {ticket.status}
               </TableCell>
-              <TableCell style={{ width: 160 }} align="right">
+              <TableCell style={{ width: 160 }} >
                 {ticket.date}
               </TableCell>
             </TableRow>
@@ -93,4 +96,8 @@ export default function TicketsTable({tickets}){
             </Table>
         </TableContainer>
     )
+}
+
+const tableStyle = {
+    textAlign : 'left !important',
 }

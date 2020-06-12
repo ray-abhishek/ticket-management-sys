@@ -4,16 +4,16 @@
         "title":"Low wire hanging",
         "description":"Dangerously low wire hanging. Fix immediately.",
         "date": "12-06-2020",
-        "status": "Pending",
-        "company": "2"
+        "status": "On Hold",
+        "company": "Electricity"
     },
     {
         "id":"2",
         "title":"Underground Pipe Burst",
         "description":"Someone has dumped chemicals near Kundanhalli Pond. Please check and advise.",
         "date": "12-06-2020",
-        "status": "Pending",
-        "company": "1"
+        "status": "On Hold",
+        "company": "Plumbing"
     },
     {
         "id":"3",
@@ -21,7 +21,7 @@
         "description":"Near jagda bridge. Fix ASAP.",
         "date": "12-06-2020",
         "status": "Pending",
-        "company": "2"
+        "company": "Electricity"
     },
     {
         "id":"4",
@@ -29,15 +29,15 @@
         "description":"There has been an accumulation of water near an low electricity pole.",
         "date": "12-06-2020",
         "status": "Pending",
-        "company": "2"
+        "company": "Electricity"
     },
     {
         "id":"5",
         "title":"Miscreants disturbing atmosphere.",
         "description":"Someone has dumped chemicals near Kundanhalli Pond. Please check and advise.",
         "date": "12-06-2020",
-        "status": "Pending",
-        "company": "4"
+        "status": "On Hold",
+        "company": "Park Authority"
     },
     {
         "id":"6",
@@ -45,23 +45,23 @@
         "description":"Someone has dumped chemicals near Kundanhalli Pond. Please check and advise.",
         "date": "12-06-2020",
         "status": "Pending",
-        "company": "3"
+        "company": "Garbage Disposal"
     },
     {
         "id":"7",
         "title":"Illegal Garbage Disposal",
         "description":"Someone has dumped chemicals near Kundanhalli Pond. Please check and advise.",
         "date": "12-06-2020",
-        "status": "Pending",
-        "company": "3"
+        "status": "On Hold",
+        "company": "Garbage Disposal"
     },
     {
         "id":"8",
         "title":"Illegal Garbage Disposal",
         "description":"Someone has dumped chemicals near Kundanhalli Pond. Please check and advise.",
         "date": "12-06-2020",
-        "status": "Pending",
-        "company": "5"
+        "status": "On Hold",
+        "company": "Townhall"
     },
     {
         "id":"9",
@@ -69,15 +69,15 @@
         "description":"Someone has dumped chemicals near Kundanhalli Pond. Please check and advise.",
         "date": "12-06-2020",
         "status": "Pending",
-        "company": "2"
+        "company": "Electricity"
     },
     {
         "id":"10",
         "title":"Illegal Garbage Disposal",
         "description":"Someone has dumped chemicals near Kundanhalli Pond. Please check and advise.",
         "date": "12-06-2020",
-        "status": "Pending",
-        "company": "1"
+        "status": "Resolved",
+        "company": "Plumbing"
     },
     {
         "id":"11",
@@ -85,15 +85,15 @@
         "description":"Someone has dumped chemicals near Kundanhalli Pond. Please check and advise.",
         "date": "12-06-2020",
         "status": "Pending",
-        "company": "2"
+        "company": "Electricity"
     },
     {
         "id":"12",
         "title":"Illegal Garbage Disposal",
         "description":"Someone has dumped chemicals near Kundanhalli Pond. Please check and advise.",
         "date": "12-06-2020",
-        "status": "Pending",
-        "company": "2"
+        "status": "Resolved",
+        "company": "Electricity"
     },
     {
         "id":"13",
@@ -101,23 +101,23 @@
         "description":"Someone has dumped chemicals near Kundanhalli Pond. Please check and advise.",
         "date": "12-06-2020",
         "status": "Pending",
-        "company": "4"
+        "company": "Park Authority"
     },
     {
         "id":"14",
         "title":"Illegal Garbage Disposal",
         "description":"Someone has dumped chemicals near Kundanhalli Pond. Please check and advise.",
         "date": "12-06-2020",
-        "status": "Pending",
-        "company": "3"
+        "status": "Resolved",
+        "company": "Garbage Disposal"
     },
     {
         "id":"15",
         "title":"Illegal Garbage Disposal",
         "description":"Someone has dumped chemicals near Kundanhalli Pond. Please check and advise.",
         "date": "12-06-2020",
-        "status": "Pending",
-        "company": "3"
+        "status": "Resolved",
+        "company": "Garbage Disposal"
     },
     {
         "id":"16",
@@ -125,6 +125,6 @@
         "description":"Someone has dumped chemicals near Kundanhalli Pond. Please check and advise.",
         "date": "12-06-2020",
         "status": "Pending",
-        "company": "5"
+        "company": "Townhall"
     }
 ]

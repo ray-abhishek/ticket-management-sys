@@ -14,12 +14,14 @@ export default function Home(){
     const companies = useSelector(state => state.companies )
 
     return (
-        <div style={flexStyle}>
+        <div>
+            <div  style={flexStyle}>
             {
                 companies.length > 0 ? companies.map(item => {
                     return <CompanyCard company={item}/> 
                 }): <div>Unable to load Companies</div>
             }
+            </div>
         </div>
     )
     
@@ -28,5 +30,7 @@ export default function Home(){
 const flexStyle = {
     display : 'flex',
     flexDirection : 'row',
+    justifyContent : 'center',
     flexWrap : 'wrap',
+    margin : '0 auto'
 }
