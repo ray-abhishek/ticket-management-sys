@@ -1,12 +1,17 @@
 import React from 'react';
+import Container from '@material-ui/core/Container';
+import Linking from './Routes/Links/Linking'
+import Routing from './Routes/Route'
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-
-    </div>
+    <Container>
+      <Linking/>
+      <Routing/>
+    </Container>
   );
 }
 
 export default App;
+

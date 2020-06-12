@@ -1,8 +1,8 @@
 import React from 'react'
-import { Switch } from '@material-ui/core'
 import Home from '../Components/Big/Home'
 import TicketPage from '../Components/Big/TicketPage'
 //import Dashboard from '../Components/Big/Dashboard'
+import { Switch , Route } from 'react-router'
 
 export default function Routing(){
     

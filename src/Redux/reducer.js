@@ -5,11 +5,17 @@ import {
     FETCH_COMPANY_FAILURE,
     FETCH_TICKET_FAILURE
 } from './action'
+import sampleCompanies from './sampleCompanies.json'
+import sampleTickets from './sampleTickets.json'
+
+console.log(sampleCompanies," are loaded for demo purpose")
+console.log(sampleTickets," are loaded for demo purpose")
+
 
 const initialState = {
     isLoading : false,
-    tickets : [],
-    companies : []
+    tickets : sampleTickets,
+    companies : sampleCompanies
 }
 
 export default function reducer( state = initialState , { type , payload }){

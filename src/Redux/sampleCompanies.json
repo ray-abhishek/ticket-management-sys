@@ -1,0 +1,32 @@
+[
+    {
+        "id":"1",
+        "name":"Plumbing",
+        "description":"Report here for Plumbing related issues",
+        "tickets":["2","5"]
+    },
+    {
+        "id":"2",
+        "name":"Electricity",
+        "description":"Report here for Electricity related issues.",
+        "tickets":["1","3","4"]
+    },
+    {
+        "id":"3",
+        "name":"Garbage Disposal",
+        "description":"Report here for Garbage Disposal related issues.",
+        "tickets":["6","7"]
+    },
+    {
+        "id":"4",
+        "name":"Park Authority",
+        "description":"Report here for issues related to maintainance or security within Parks.",
+        "tickets":["5"]
+    },
+    {
+        "id":"5",
+        "name":"Townhall",
+        "description":"Be a citizen advocate. Report your issues here and they shall be resolved in a fair and democratic manner",
+        "tickets":["8"]
+    }
+]
