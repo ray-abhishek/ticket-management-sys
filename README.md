@@ -5,13 +5,35 @@ In a muncipality, there are numerous departments relating to Sanitation, Water S
 
 Covers below use cases :-
 1. User can raise a new ticket for any of the listed departments
+
     ![N|Solid](https://i.imgur.com/gc0GxLO.png)
+
+
 2. A new department can be created. 
+
     ![N|Solid](https://i.imgur.com/XNkX3HZ.png)
+
+
 3. A ticket can be responded to with further comments and either put on Pending, On Hold or Solved. 
+
      ![N|Solid](https://i.imgur.com/IUzQdg6.png)
+
+
 4. Dashboard displays graphical representations on the nature of overall data. To do so, it has a pie chart showing how many tickets are in Pending, On Hold and Solved. It also has a bar chart showing the tickets department wise. 
+
     ![N|Solid](https://i.imgur.com/4ujUBXh.png)
+
+
+
+I've used React for Frontend and Redux for State Mangement. At the backend, I've used Flask and MySQL(Database).
+
+To Start the App locally, 
+Inside directory /reactfrontend/
+1. Activate VirtualEnv by "virtualenv flaskbackend/bin/activate"
+2. Set Environment Variables by "export FLASK_ENV=development" , "export FLASK_APP=server.py" .
+3. Start the server by "flask run"
+4. Inside the directory /reactfrontend/  , execute command -> "npm start"
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
