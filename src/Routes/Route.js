@@ -4,6 +4,7 @@ import TicketPage from '../Components/Big/TicketPage'
 import RaiseTicketForm from '../Components/Big/RaiseTicketForm'
 import RespondTicketPage from '../Components/Big/RespondTicketPage'
 import Dashboard from '../Components/Big/Dashboard'
+import CreateCompany from '../Components/Big/CreateCompany'
 import { Switch , Route } from 'react-router'
 
 export default function Routing(){
@@ -19,6 +20,9 @@ export default function Routing(){
             <Route path="/raise" exact render={(props) => <RaiseTicketForm {...props}/> } />
 
             <Route path="/respond" exact render={(props) => <RespondTicketPage {...props}/> } />
+
+            <Route path="/newcompany" exact render={(props) => <CreateCompany {...props}/> } />
+
         </Switch>
     )
 }

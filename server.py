@@ -91,6 +91,18 @@ def fetchStatus():
 
     return {'status':statusData}
 
+@app.route('/fetch/count')
+def fetchCount():
+    cur = mysql.connection.cursor()
+    cur.execute('''SELECT COUNT(Tickets.id),Tickets.company FROM Tickets GROUP BY Tickets.company;''')
+    result = cur.fetchall()
+    countData = []
+    for row in result:
+        countData.append(row)
+    cur.close()
+
+    return {'count':countData}
+
 
 @app.route('/add/company',methods=['POST'])
 def addCompany():

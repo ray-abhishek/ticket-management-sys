@@ -7,12 +7,18 @@ import './App.css';
 
 function App() {
   return (
-    <Container>
+    <Container style={containerStyle}>
       <Linking/>
       <Routing/>
       
     </Container>
   );
+}
+
+const containerStyle = {
+  margin : '0 !important',
+  padding : 0,
+  width : '100%'
 }
 
 export default App;

@@ -37,12 +37,12 @@ export default function TicketsTable({tickets}){
 
     return (
         <TableContainer component={Paper} style={tableStyle}>
-            <Table className={classes.table}>
+            <Table className={classes.table} size="small">
             <TableHead>
           <TableRow>
             <TableCell>ID</TableCell>
-            <TableCell>Title</TableCell>
-            <TableCell>Company</TableCell>
+            <TableCell>Issue</TableCell>
+            <TableCell>Assigned To</TableCell>
             <TableCell>Status</TableCell>
             <TableCell>Raised On</TableCell>
           </TableRow>

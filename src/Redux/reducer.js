@@ -6,6 +6,8 @@ import {
     FETCH_TICKET_FAILURE,
     UPDATE_STATUS,
     FETCH_STATUS_FAILURE,
+    UPDATE_COUNT,
+    FETCH_COUNT_FAILURE,
 } from './action'
 import sampleCompanies from './sampleCompanies.json'
 import sampleTickets from './sampleTickets.json'
@@ -18,7 +20,8 @@ const initialState = {
     isLoading : false,
     tickets : [],
     companies : [],
-    status : []
+    status : [],
+    count : []
 }
 
 export default function reducer( state = initialState , { type , payload }){
@@ -66,6 +69,18 @@ export default function reducer( state = initialState , { type , payload }){
                 }
         case FETCH_STATUS_FAILURE:
                 console.log("FETCH_STATUS_FAILURE called")
+                return {
+                    ...state,
+                    error : payload 
+                }
+        case UPDATE_COUNT:
+                console.log("UPDATE_COUNT called ")
+                return {
+                    ...state,
+                    count : payload.count
+                }
+        case FETCH_COUNT_FAILURE:
+                console.log("FETCH_COUNT_FAILURE called ")
                 return {
                     ...state,
                     error : payload 

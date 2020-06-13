@@ -7,11 +7,12 @@ import { Link } from 'react-router-dom'
 const useStyles = makeStyles({
     root: {
       width: 150,
+      height: 175,
       margin: 10,
       display: 'flex',
       flexDirection : 'column',
       justifyContent: 'space-between',
-      background: 'linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%)',
+      backgroundColor: '#f7f7f7'
     },
     media: {
       height: 150,
@@ -27,9 +28,7 @@ export default function CompanyCard({company}){
         <Card className={classes.root}>
             <CardActionArea>
             <CardContent>
-                <Typography className={classes.title} color="textSecondary" gutterBottom>
-                            Company
-                </Typography>
+                
                 <Typography variant="h5" component="h2">
                     {company[1]}
                 </Typography>

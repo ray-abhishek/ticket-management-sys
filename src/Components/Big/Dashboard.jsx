@@ -1,7 +1,9 @@
-import React, { useEffect } from 'react'
-import { fetchStatus } from '../../Redux/action'
+import React, { useEffect, useState } from 'react'
+import { fetchStatus , fetchCount } from '../../Redux/action'
 import { useSelector , useDispatch } from 'react-redux'
 import { PieChart } from 'react-minimal-pie-chart';
+//import BarChart from 'react-bar-chart';
+import CountChart from '../Small/CountChart'
 import Legend from '../Small/Legend'
 
 export default function Dashboard(){
@@ -10,9 +12,12 @@ export default function Dashboard(){
     useEffect(()=>{
         console.log("Fetching Companies through useEffect")
         dispatcher(fetchStatus())
+        dispatcher(fetchCount())
     }, [])
-
+    const margin = {top: 20, right: 20, bottom: 30, left: 30};
     const statuses = useSelector(state => state.status )
+    const counts = useSelector(state => state.count )
+    console.log(counts, " company wise ticket count")
     console.log(statuses," are status of tickets category wise")
     var onhold = 0, pending = 0, solved = 0
     statuses.forEach(status => {
@@ -22,20 +27,38 @@ export default function Dashboard(){
             pending = status[0]
         else solved = status[0]
     })
-    return (
-        <div style={pieContainer}>
-        <div style={pieStyle}>
-        <PieChart
-            data={[
-        { title: 'On Hold', value: onhold, color: '#E38627' },
-        { title: 'Pending', value: pending, color: '#C13C37' },
-        { title: 'Solved', value: solved, color: 'green'},
-                ]} 
-            label={ ( {dataEntry} ) => dataEntry.value }
-                />
+    var countData = [], companyData = []
+    counts.forEach(count => {
+        countData.push(count[0])
+        companyData.push(count[1])
+    })
+    const [ width , setWidth ] = useState(500)
+    useEffect(()=>{
         
-        </div>
-        <Legend />
+    }, [])
+
+    return (
+        <div style={dashboardStyle}>
+            <div style={pieContainer}>
+            <h5>Status Wise Ticket Count</h5>
+            <div style={rowStyle}>
+            <div style={pieStyle}>
+            <PieChart
+                data={[
+            { title: 'On Hold', value: onhold, color: '#E38627' },
+            { title: 'Pending', value: pending, color: '#C13C37' },
+            { title: 'Solved', value: solved, color: 'green'},
+                    ]} 
+                label={ ( {dataEntry} ) => dataEntry.value }
+                    />
+
+            </div>
+            <Legend />
+            </div>
+            </div>
+            <div style={barContainer}>
+                    <CountChart ticketCount={countData} ticketCompany={companyData}/>
+            </div>
         </div>
     )
 }
@@ -47,6 +70,27 @@ const pieStyle = {
 
 const pieContainer = {
     display : 'flex',
+    flexDirection : 'column',
+    justifyContent : 'space-evenly',
+    alignItems : 'center'
+}
+
+const rowStyle = {
+    display : 'flex',
     justifyContent : 'center',
     alignItems : 'center'
+}
+
+const barContainer = {
+    display : 'flex',
+    justifyContent : 'center',
+    alignItems : 'center',
+    paddingTop : '1.5rem',
+}
+
+
+
+const dashboardStyle = {
+    display : 'flex',
+    justifyContent : 'space-evenly'
 }
