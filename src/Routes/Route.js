@@ -3,7 +3,7 @@ import Home from '../Components/Big/Home'
 import TicketPage from '../Components/Big/TicketPage'
 import RaiseTicketForm from '../Components/Big/RaiseTicketForm'
 import RespondTicketPage from '../Components/Big/RespondTicketPage'
-//import Dashboard from '../Components/Big/Dashboard'
+import Dashboard from '../Components/Big/Dashboard'
 import { Switch , Route } from 'react-router'
 
 export default function Routing(){
@@ -23,5 +23,5 @@ export default function Routing(){
     )
 }
 
-const Dashboard = () => <div>DASHBOARD IN PROGRESS</div>
+//const Dashboard = () => <div>DASHBOARD IN PROGRESS</div>
 

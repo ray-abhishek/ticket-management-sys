@@ -5,13 +5,30 @@ const FETCH_COMPANIES_RECEIVED = "FETCH_COMPANIES_RECEIVED"
 const FETCH_TICKETS_RECEIVED = "FETCH_TICKETS_RECEIVED"
 const FETCH_COMPANY_FAILURE = "FETCH_COMPANY_FAILURE"
 const FETCH_TICKET_FAILURE = "FETCH_TICKET_FAILURE"
-const ADD_TICKET = "ADD_TICKET"
-const ADD_COMPANY = "ADD_COMPANY"
-
+//const ADD_TICKET = "ADD_TICKET"
+//const ADD_COMPANY = "ADD_COMPANY"
+const UPDATE_STATUS = "UPDATE_STATUS"
+const FETCH_STATUS_FAILURE = "FETCH_STATUS_FAILURE" 
 
 const registerRequest = () => ({
     type : FETCH_REQUEST_SENT
 })
+
+const updateStatus = (payload) => {
+    console.log("updateStatus called")
+    return {
+        type : UPDATE_STATUS,
+        payload : payload 
+    }
+}
+
+const fetchStatusFailure = (error) => {
+    console.log("status fetch failure action called")
+    return {
+        type : FETCH_STATUS_FAILURE,
+        payload : error 
+    }
+}
 
 const updateCompanies = (payload) => {
     console.log("updateCompanies called")
@@ -89,6 +106,20 @@ const fetchTickets = () => {
     }
 }
 
+const fetchStatus = () => {
+
+    console.log("fetchStatus called ")
+    return dispatch => {
+        console.log("Registering Request")
+        dispatch(registerRequest())
+        return axios.get("http://127.0.0.1:5000/fetch/status").then(res => {
+            console.log("fetch status success",res.data)
+            return dispatch(updateStatus(res.data))
+        })
+        .catch(err => dispatch(fetchStatusFailure(err)))
+    }
+}
+
 
 const addTicket = (payload) => {
     console.log(payload," is ticket/payload to be added to DB")
@@ -138,9 +169,12 @@ export {
     FETCH_TICKETS_RECEIVED,
     FETCH_COMPANY_FAILURE,
     FETCH_TICKET_FAILURE,
+    UPDATE_STATUS,
+    FETCH_STATUS_FAILURE,
     fetchCompanies,
     fetchTickets,
     addTicket,
     addCompany,
-    modifyTicket
+    modifyTicket,
+    fetchStatus
 }

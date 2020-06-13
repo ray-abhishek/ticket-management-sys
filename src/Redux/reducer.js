@@ -3,7 +3,9 @@ import {
     FETCH_COMPANIES_RECEIVED,
     FETCH_TICKETS_RECEIVED,
     FETCH_COMPANY_FAILURE,
-    FETCH_TICKET_FAILURE
+    FETCH_TICKET_FAILURE,
+    UPDATE_STATUS,
+    FETCH_STATUS_FAILURE,
 } from './action'
 import sampleCompanies from './sampleCompanies.json'
 import sampleTickets from './sampleTickets.json'
@@ -15,7 +17,8 @@ console.log(sampleTickets," are loaded for demo purpose")
 const initialState = {
     isLoading : false,
     tickets : [],
-    companies : []
+    companies : [],
+    status : []
 }
 
 export default function reducer( state = initialState , { type , payload }){
@@ -54,6 +57,18 @@ export default function reducer( state = initialState , { type , payload }){
                 return {
                     ...state,
                     error : payload
+                }
+        case UPDATE_STATUS:
+                console.log("UPDATE_STATUS called")
+                return {
+                    ...state,
+                    status : payload.status
+                }
+        case FETCH_STATUS_FAILURE:
+                console.log("FETCH_STATUS_FAILURE called")
+                return {
+                    ...state,
+                    error : payload 
                 }
         default : console.log("DEFAULT called")
                   return state 

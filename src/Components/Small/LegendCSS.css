@@ -1,0 +1,21 @@
+div.boxStyle {
+    width:20px;
+    height:20px;
+}
+
+div.rowStyle {
+    display: flex;
+    flex-direction: row;
+}
+
+div.rowStyle h5 {
+    line-height: 20px;
+    margin-top: 0;
+    margin-left : 5px;
+    font-size: 1.2rem;
+    font-weight: 100;
+}
+
+div.legendContainer{
+    margin : 2rem;
+}
