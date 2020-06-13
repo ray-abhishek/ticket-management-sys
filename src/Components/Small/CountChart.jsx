@@ -27,7 +27,7 @@ export default function CountChart(props) {
           options={{
             title:{
               display:true,
-              text:'Company Wise Ticket Count',
+              text:'Department Wise Ticket Count',
               fontSize:18
             },
             legend:{

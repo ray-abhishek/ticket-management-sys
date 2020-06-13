@@ -89,7 +89,7 @@ export default function RespondTicketPage(){
                 ))}
                 </TextField>
                 <Button variant="contained" color="secondary" style={{marginTop:'1rem'}} type="submit">
-                        S U B M I T
+                        U P D A T E
                 </Button>
             </form>
         </div>

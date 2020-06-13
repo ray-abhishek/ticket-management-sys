@@ -44,7 +44,7 @@ export default function CreateCompany(){
                         value={descValue} onChange={(e)=>setDescValue(e.target.value)}/>
   
                 <Button variant="contained" color="secondary" style={{marginTop:'1rem'}} type="submit">
-                        C R E A T E
+                        CREATE DEPARTMENT
                 </Button>
             </form>
         </div>

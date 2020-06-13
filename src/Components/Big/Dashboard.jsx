@@ -38,8 +38,8 @@ export default function Dashboard(){
     }, [])
 
     return (
-        <div style={dashboardStyle}>
-            <div style={pieContainer}>
+        <div className="row">
+            <div style={pieContainer} className="col-sm-12 col-md-6 mt-sm-5">
             <h5>Status Wise Ticket Count</h5>
             <div style={rowStyle}>
             <div style={pieStyle}>
@@ -56,7 +56,7 @@ export default function Dashboard(){
             <Legend />
             </div>
             </div>
-            <div style={barContainer}>
+            <div style={barContainer} className="col-sm-12 col-md-6">
                     <CountChart ticketCount={countData} ticketCompany={companyData}/>
             </div>
         </div>

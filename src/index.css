@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f7f7f7;
+
 }
 /*background: 'linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%)' */
 /*background-color: #f7f7f7; */
@@ -16,6 +16,10 @@ code {
 
 a {
   text-decoration: none !important;
+}
+
+.navbar-nav a {
+  color : black !important;
 }
 
 footer{

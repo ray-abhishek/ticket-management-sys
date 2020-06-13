@@ -23,6 +23,7 @@ export default function RaiseTicketForm(){
 
     const classes = useStyles()
     const location = useLocation()
+    const [ raised , setRaised ] = useState(false)
     const dispatcher = useDispatch()
     const [ titleValue , setTitleValue ] = useState('')
     const [ descValue , setDescValue ] = useState('')
@@ -31,7 +32,8 @@ export default function RaiseTicketForm(){
     todaysDate = todaysDate.toISOString()
     todaysDate = todaysDate.slice(0, todaysDate.lastIndexOf('T'))
     return (
-        <div>
+        <div style={formStyle}>
+            { raised===false? 
             <form className={classes.root} onSubmit={(e)=>{
               e.preventDefault()
               dispatcher(addTicket({"title":titleValue,
@@ -40,6 +42,7 @@ export default function RaiseTicketForm(){
                   "raisedOn":todaysDate,
                   "status":"Pending"
                 }))
+              setRaised(true)
             }}>
                 <TextField required label="Title" placeholder="Enter Title. . ." value={titleValue} onChange={(e)=>setTitleValue(e.target.value)}/>
                 <TextField disabled label="Company" placeholder="Enter Company. . ." defaultValue={location.state[1]}/>
@@ -55,7 +58,23 @@ export default function RaiseTicketForm(){
                 <Button variant="contained" color="secondary" style={{marginTop:'1rem'}} type="submit">
                         R E G I S T E R
                 </Button>
-            </form>
+            </form> :
+            <div style={{marginTop:'20px'}}>Ticket has been logged. Thanks!
+              <Button style={{display:'block'}} variant="outlined" color="primary" onClick={()=>{
+                          setRaised(false)
+                          setTitleValue('')
+                          setDescValue('')
+                          }}>
+                Create Another Ticket
+              </Button>
+            </div>
+            }
         </div>
     )
+}
+
+const formStyle = {
+  display: 'flex',
+  justifyContent : 'center',
+  alignItems : 'center'
 }

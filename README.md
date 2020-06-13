@@ -1,7 +1,7 @@
 # Citizen Issue Tracker
 ##### A Ticket Management System
 
-In a muncipality, there are numerous departments relating to Sanitation, Water Supply, Plumbing etc. Using this Ticket Management System, issues can be raised to the concerning department, which can then be responded to. 
+In a muncipality, there are numerous departments relating to Sanitation, Water Supply, Plumbing etc. Using this Ticket Management System, issues can be raised to the concerned department, which can then be responded to. 
 
 Covers below use cases :-
 1. User can raise a new ticket for any of the listed departments
@@ -28,14 +28,13 @@ Covers below use cases :-
 
 
 
-I've used React for Frontend and Redux for State Mangement. At the backend, I've used Flask and MySQL(Database).
+I've used React for Frontend and Redux for State Management. At the backend, I've used Flask and MySQL(Database).
 
 To Start the App locally, 
-Inside directory /reactfrontend/
 1. Activate VirtualEnv by "virtualenv flaskbackend/bin/activate"
 2. Set Environment Variables by "export FLASK_ENV=development" , "export FLASK_APP=server.py" .
-3. Start the server by "flask run"
-4. Inside the directory /reactfrontend/  , execute command -> "npm start"
+3. Start the server by executin command -> "flask run"
+4. execute command -> "npm start"
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

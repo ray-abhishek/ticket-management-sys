@@ -4,7 +4,7 @@ import { useSelector , useDispatch } from 'react-redux'
 import CompanyCard from '../Small/CompanyCard'
 import AddCompany from '../Small/AddCompany'
 
-export default function Home(){
+export default function Departments(){
     const dispatcher = useDispatch()
     useEffect(()=>{
         console.log("Fetching Companies through useEffect")

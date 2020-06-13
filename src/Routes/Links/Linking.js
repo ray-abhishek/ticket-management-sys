@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom'
 
 const navlinks = [
     {
-        "link":"Home",
-        "route":"/"
+        "link":"Departments",
+        "route":"/departments"
     },
     {
         "link":"Track",
@@ -19,16 +19,16 @@ const navlinks = [
 
 const listitems = navlinks.map(navlink => {
     return <li className="nav-item">
-        <Link className="nav-link mr-5 text-light font-weight-bold" to={navlink.route}>{navlink.link}</Link>
+        <Link className="nav-link mr-5 font-weight-bold" to={navlink.route}>{navlink.link}</Link>
     </li>
 }) 
 
 export default function Linking(){
     
     return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-info rounded">
+        <nav className="navbar navbar-expand-lg navbar-light  rounded" style={navbarStyle}>
 
-            <Link className="navbar-brand text-light font-weight-bold d-flex  ml-md-5 align-items-center" to="/">Citizen Issue Tracker</Link>
+            <Link className="navbar-brand font-weight-bold d-flex  ml-md-5 align-items-center" to="/">Citizen Issue Tracker</Link>
             
             <button className="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navToggler">
                 <span className="navbar-toggler-icon"></span>
@@ -45,6 +45,12 @@ export default function Linking(){
         </nav>
     )
 }
+
+const navbarStyle = {
+    backgroundColor : 'white',
+    color : 'black'
+}
+
 
 const navStyle = {
     display: 'flex',
