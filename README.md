@@ -3,6 +3,10 @@
 
 In a muncipality, there are numerous departments relating to Sanitation, Water Supply, Plumbing etc. Using this Ticket Management System, issues can be raised to the concerned department, which can then be responded to. 
 
+
+![N|Solid](https://i.imgur.com/JNWNL2x.png)
+
+
 Covers below use cases :-
 1. User can raise a new ticket for any of the listed departments
 
