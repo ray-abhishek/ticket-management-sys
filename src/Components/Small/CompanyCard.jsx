@@ -10,7 +10,8 @@ const useStyles = makeStyles({
       margin: 10,
       display: 'flex',
       flexDirection : 'column',
-      justifyContent: 'space-between'
+      justifyContent: 'space-between',
+      background: 'linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%)',
     },
     media: {
       height: 150,
@@ -30,14 +31,15 @@ export default function CompanyCard({company}){
                             Company
                 </Typography>
                 <Typography variant="h5" component="h2">
-                    {company.name}
+                    {company[1]}
                 </Typography>
             </CardContent>
             </CardActionArea>
             <CardActions>
             <Link to={{pathname: "/raise",
                        state : company}}>
-                <Button size="small" color="primary">
+                           
+                <Button size="small" color="secondary">
                     Raise Ticket
                 </Button>
             </Link>

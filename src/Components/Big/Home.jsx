@@ -1,14 +1,13 @@
 import React, { useEffect } from 'react'
 import { fetchCompanies } from '../../Redux/action'
-import { useSelector } from 'react-redux'
-
+import { useSelector , useDispatch } from 'react-redux'
 import CompanyCard from '../Small/CompanyCard'
 
 export default function Home(){
-
+    const dispatcher = useDispatch()
     useEffect(()=>{
         console.log("Fetching Companies through useEffect")
-        fetchCompanies()
+        dispatcher(fetchCompanies())
     }, [])
 
     const companies = useSelector(state => state.companies )

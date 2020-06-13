@@ -5,6 +5,8 @@ const FETCH_COMPANIES_RECEIVED = "FETCH_COMPANIES_RECEIVED"
 const FETCH_TICKETS_RECEIVED = "FETCH_TICKETS_RECEIVED"
 const FETCH_COMPANY_FAILURE = "FETCH_COMPANY_FAILURE"
 const FETCH_TICKET_FAILURE = "FETCH_TICKET_FAILURE"
+const ADD_TICKET = "ADD_TICKET"
+const ADD_COMPANY = "ADD_COMPANY"
 
 
 const registerRequest = () => ({
@@ -26,7 +28,23 @@ const updateTickets = (payload) => {
     payload : payload
     }
 }
+/*
+const newTicket = (payload) => {
+    console.log("addTicket called")
+    return {
+        type : ADD_TICKET,
+        payload : payload
+    }
+}
 
+const newCompany = (payload) => {
+    console.log("addCompany called")
+    return {
+        type : ADD_COMPANY,
+        payload : payload
+    }
+}
+*/
 const fetchCompanyFailure = (error) => {
     console.log("company fetch failure action called")
     return {
@@ -47,8 +65,9 @@ const fetchCompanies = () => {
 
     console.log("fetchCompanies called ")
     return dispatch => {
+        console.log("Registering Request")
         dispatch(registerRequest())
-        return axios.get("url to fetch companies").then(res => {
+        return axios.get("http://127.0.0.1:5000/fetch/companies").then(res => {
             console.log("fetch companies success",res.data)
             return dispatch(updateCompanies(res.data))
         })
@@ -60,8 +79,9 @@ const fetchTickets = () => {
 
     console.log("fetchTickets called ")
     return dispatch => {
+        console.log("Registering Request")
         dispatch(registerRequest())
-        return axios.get("url to fetch tickets").then(res => {
+        return axios.get("http://127.0.0.1:5000/fetch/tickets").then(res => {
             console.log("fetch tickets success",res.data)
             return dispatch(updateTickets(res.data))
         })
@@ -70,6 +90,48 @@ const fetchTickets = () => {
 }
 
 
+const addTicket = (payload) => {
+    console.log(payload," is ticket/payload to be added to DB")
+    console.log("addTicket called ")
+    return dispatch => {
+        console.log("Registering Request")
+        dispatch(registerRequest())
+        return axios.post("http://127.0.0.1:5000/add/ticket",payload).then(res => {
+            console.log("new tickets success",res.data)
+            return dispatch(updateTickets(res.data))
+        })
+        .catch(err => dispatch(fetchTicketFailure(err)))
+    }
+}
+
+const modifyTicket = (payload) => {
+    console.log(payload," is ticket/payload to be modified in DB")
+    console.log("modifyTicket called ")
+    return dispatch => {
+        console.log("Registering Request")
+        dispatch(registerRequest())
+        return axios.post("http://127.0.0.1:5000/modify/ticket",payload).then(res => {
+            console.log("modify tickets success",res.data)
+            return dispatch(updateTickets(res.data))
+        })
+        .catch(err => dispatch(fetchTicketFailure(err)))
+    }
+}
+
+const addCompany = (payload) => {
+    console.log(payload," is company/payload to be added to DB")
+    console.log("addCompany called ")
+    return dispatch => {
+        console.log("Registering Request")
+        dispatch(registerRequest())
+        return axios.post("http://127.0.0.1:5000/add/company",payload).then(res => {
+            console.log("new company success",res.data)
+            return dispatch(updateCompanies(res.data))
+        })
+        .catch(err => dispatch(fetchCompanyFailure(err)))
+    }
+}
+
 export {
     FETCH_REQUEST_SENT,
     FETCH_COMPANIES_RECEIVED,
@@ -77,5 +139,8 @@ export {
     FETCH_COMPANY_FAILURE,
     FETCH_TICKET_FAILURE,
     fetchCompanies,
-    fetchTickets
+    fetchTickets,
+    addTicket,
+    addCompany,
+    modifyTicket
 }

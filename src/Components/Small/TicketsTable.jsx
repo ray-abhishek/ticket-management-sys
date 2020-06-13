@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { TableContainer } from '@material-ui/core';
+import { TableContainer, Button } from '@material-ui/core';
 import TablePaginationActions from './TablePaginationActions'
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
@@ -54,20 +54,21 @@ export default function TicketsTable({tickets}){
           ).map((ticket) => (
             <TableRow key={ticket.id}>
               <TableCell component="th" scope="row">
-                {ticket.id}
+                {ticket[0]}
               </TableCell>
               <TableCell component="th" scope="row">
                 <Link to={{pathname:"/respond",
-                            state : ticket}}>{ticket.title}</Link>  
+                            state : ticket}}>{ticket[1]}</Link>  
               </TableCell>
               <TableCell style={{ width: 160 }} >
-                {ticket.company}
+                {ticket[5]}
               </TableCell>
               <TableCell style={{ width: 160 }} >
-                {ticket.status}
+                  <Button variant="outlined" color={ticket[4]==='Pending'?"primary" : ticket[4]==='On Hold' ? "secondary" : "green"}>{ticket[4]}</Button>
+                
               </TableCell>
               <TableCell style={{ width: 160 }} >
-                {ticket.date}
+                {ticket[3].slice(0,ticket[3].lastIndexOf('00:00:00'))}
               </TableCell>
             </TableRow>
           ))}
@@ -81,6 +82,7 @@ export default function TicketsTable({tickets}){
 
                 <TableFooter>
           <TableRow>
+          
             <TablePagination
               rowsPerPageOptions={[10, 15, 20, { label: 'All', value: -1 }]}
               colSpan={3}

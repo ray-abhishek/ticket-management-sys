@@ -14,8 +14,8 @@ console.log(sampleTickets," are loaded for demo purpose")
 
 const initialState = {
     isLoading : false,
-    tickets : sampleTickets,
-    companies : sampleCompanies
+    tickets : [],
+    companies : []
 }
 
 export default function reducer( state = initialState , { type , payload }){
@@ -33,14 +33,14 @@ export default function reducer( state = initialState , { type , payload }){
             console.log("FETCH COMPANIES_RECEIVED called")
             return {
                 ...state,
-                companies : payload.data,
+                companies : payload.companyData,
                 isLoading : false, 
             }
         case FETCH_TICKETS_RECEIVED:
             console.log("FETCH_TICKETS_RECEIVED")
             return {
                 ...state,
-                tickets : payload.data,
+                tickets : payload.ticketData,
                 isLoading : false
             }
         case FETCH_COMPANY_FAILURE:
