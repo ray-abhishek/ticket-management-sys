@@ -1,10 +1,17 @@
-Ticket Management System
+# Citizen Issue Tracker
+##### A Ticket Management System
 
-A site where User can raise a ticket, which can then be assigned to be taken care of and responded within a certain time. 
-Includes :-
-1. Dashboard that displays graphical representations on the nature of overall tickets.
-2. Functionality via which tickets can be responded to and resolved.
-3. Functionality to create new Profiles of Companies. 
+In a muncipality, there are numerous departments relating to Sanitation, Water Supply, Plumbing etc. Using this Ticket Management System, issues can be raised to the concerning department, which can then be responded to. 
+
+Covers below use cases :-
+1. User can raise a new ticket for any of the listed departments
+    ![N|Solid](https://i.imgur.com/gc0GxLO.png)]
+2. A new department can be created. 
+    ![N|Solid](https://i.imgur.com/XNkX3HZ.png)]
+3. A ticket can be responded to with further comments and either put on Pending, On Hold or Solved. 
+     ![N|Solid](https://i.imgur.com/IUzQdg6.png)]
+4. Dashboard displays graphical representations on the nature of overall data. To do so, it has a pie chart showing how many tickets are in Pending, On Hold and Solved. It also has a bar chart showing the tickets department wise. 
+    ![N|Solid](https://i.imgur.com/4ujUBXh.png)]
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

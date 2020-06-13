@@ -31,7 +31,7 @@ def preLoadData():
     cur.close()
 
     cur = mysql.connection.cursor()
-    cur.execute('''INSERT INTO Tickets (title, description, raisedOn, status, company) VALUES ("Low wire hanging","Dangerously low wire hanging. Fix immediately.","2020-06-12","On Hold","Electricity"),("Underground Pipe Burst","Someone has dumped chemicals near Kundanhalli Pond. Please check and advise.","2020-06-12","On Hold","Plumbing"),("Low wire near Jagda","Near jagda bridge. Fix ASAP.","2020-06-12","Pending","Electricity"),("Water pooling near low electricity pole","There has been an accumulation of water near an low electricity pole.","2020-06-12","Pending","Electricity"),("Miscreants disturbing atmosphere.","Someone has dumped chemicals near Kundanhalli Pond. Please check and advise.","2020-06-12","On Hold","Park Authority");''')
+    cur.execute('''INSERT INTO Tickets (title, description, raisedOn, status, company) VALUES ("Low wire hanging","Dangerously low wire hanging. Fix immediately.","2020-02-03","On Hold","Electricity"),("Underground Pipe Burst","The fire hydrant is broken causing the water to spray.","2020-04-05","On Hold","Plumbing"),("Sparks near Pole","Electricity Pole was giving off sparks near jagda bridge. Fix ASAP.","2020-05-06","Pending","Electricity"),("Water pooling near low electricity pole","There has been an accumulation of water near an low electricity pole.","2020-06-12","Pending","Electricity"),("Miscreants disturbing atmosphere.","People are riding their bicycles on walking trail.","2020-06-10","On Hold","Park Authority");''')
     cur.connection.commit()
     cur.close()
 
