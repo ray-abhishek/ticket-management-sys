@@ -15,6 +15,9 @@ Covers below use cases :-
 
 
 3. A ticket can be responded to with further comments and either put on Pending, On Hold or Solved. 
+    
+    ![N|Solid](https://i.imgur.com/LK29ave.png)
+
 
      ![N|Solid](https://i.imgur.com/IUzQdg6.png)
 
