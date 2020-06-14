@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { fetchTickets } from '../../Redux/action'
+import { fetchTickets } from '../../Redux/TicketReducer/action'
 import { useDispatch , useSelector } from "react-redux"
 import TicketsTable from '../Small/TicketsTable'
 
@@ -10,7 +10,7 @@ export default function TicketPage(){
         dispatcher(fetchTickets())
     }, [])
 
-    const ticketData = useSelector(state => state.tickets )
+    const ticketData = useSelector(state => state.ticket.tickets )
 
     return (
         <div style={containterStyle}>

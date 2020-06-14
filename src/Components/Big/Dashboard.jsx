@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { fetchStatus , fetchCount } from '../../Redux/action'
+import { fetchStatus , fetchCount } from '../../Redux/TicketReducer/action'
 import { useSelector , useDispatch } from 'react-redux'
 import { PieChart } from 'react-minimal-pie-chart';
 //import BarChart from 'react-bar-chart';
@@ -15,8 +15,8 @@ export default function Dashboard(){
         dispatcher(fetchCount())
     }, [])
     const margin = {top: 20, right: 20, bottom: 30, left: 30};
-    const statuses = useSelector(state => state.status )
-    const counts = useSelector(state => state.count )
+    const statuses = useSelector(state => state.ticket.status )
+    const counts = useSelector(state => state.ticket.count )
     console.log(counts, " company wise ticket count")
     console.log(statuses," are status of tickets category wise")
     var onhold = 0, pending = 0, solved = 0

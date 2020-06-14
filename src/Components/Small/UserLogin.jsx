@@ -1,40 +1,30 @@
 import React, { useState } from 'react'
-import { TextField, Button } from '@material-ui/core'
-import { makeStyles } from '@material-ui/core/styles';
-import { useDispatch , useSelector } from "react-redux"
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import SignIn from './SignIn'
+import SignUp from './SignUp'
 
 
-const useStyles = makeStyles((theme) => ({
-    root: {
-      '& .MuiTextField-root': {
-        margin: theme.spacing(2),
-        width: '30ch',
-      },
-      display: 'flex',
-      flexDirection : 'column',
-      margin: '0 auto',
-      justifyContent: 'space-evenly',
-      alignItems:'center',
-      
-    },
-  }));
 
 export default function UserLogin(){
-    const classes = useStyles()
-    const [ phone , setPhone ] = useState('')
-    const [ password , setPassword ] = useState('')
+    const [ signUp, setSignUp ] = useState(false)
 
     return(
-        <div style={formStyle}>
-            <h2 style={headingStyle}>Sign in</h2>
-            <form className={classes.root} onSubmit={(e)=>{
-                e.preventDefault()
-                //dispatcher(loginUser({"phoneNo":phone,"password":password}))
-            }}>
-                <TextField required label="Mobile Number" value={phone} onChange={(e)=>setPhone(e.target.value)}/>
-                <TextField required label="Password" value={password} onChange={(e)=>setPassword(e.target.value)}/>
-                <Button type="submit" color="primary" variant="outlined">Sign In</Button>
-            </form>
+        <div>
+            <div style={rowFlex}>
+                { signUp===false ? <h2 style={headingStyle}>Sign in</h2> : 
+                <div style={rowFlex}>
+                    <div style={iconStyle} onClick={()=>setSignUp(false)} ><ArrowBackIcon/></div>
+                    <h2 style={headingStyle}>Sign up</h2>
+                </div>
+                }
+            </div>
+            <div>
+                {
+                    signUp===false ? 
+                    <SignIn changeSignUp={setSignUp}/> :
+                    <SignUp changeSignUp={setSignUp}/>
+                }
+            </div>
         </div>
     )
 }
@@ -51,3 +41,45 @@ const formStyle = {
 const headingStyle = {
     fontWeight : '100'
 }
+
+const colStyle = {
+    display : 'flex',
+    flexDirection : 'column',
+    alignItems : 'center',
+    justifyContent : 'center'
+}
+
+const smallText = {
+    marginTop : '0.5rem',
+    fontSize : '0.7rem',
+}
+
+const container = {
+    height : '100%',
+}
+
+const spanStyle = {
+    color : 'blue',
+    cursor : 'pointer'
+}
+
+const rowFlex = {
+    display : 'flex',
+    flexDirection : 'row',
+    alignItems : 'center',
+    justifyContent : 'center'
+}
+
+const iconStyle = {
+    height : '100%',
+    display : 'flex',
+    alignItems : 'center',
+    position : 'relative',
+    right : '70px',
+    cursor : 'pointer',
+    color : 'orange'
+}
+
+
+
+

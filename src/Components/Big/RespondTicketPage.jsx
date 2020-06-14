@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import { TextField , Button, MenuItem, Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import { modifyTicket } from '../../Redux/action'
+import { modifyTicket } from '../../Redux/TicketReducer/action'
 import { useDispatch , useSelector } from "react-redux"
 
 

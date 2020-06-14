@@ -1,15 +1,7 @@
 import React, { useState } from 'react'
-import { TableContainer, Button } from '@material-ui/core';
+import { TableContainer, Button, Table, TableHead, TableBody, TableCell, TableFooter, TablePagination, TableRow, Paper } from '@material-ui/core';
 import TablePaginationActions from './TablePaginationActions'
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-import Table from '@material-ui/core/Table';
-import TableHead from '@material-ui/core/TableHead';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableFooter from '@material-ui/core/TableFooter';
-import TablePagination from '@material-ui/core/TablePagination';
-import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
 import { Link } from 'react-router-dom'
 
 

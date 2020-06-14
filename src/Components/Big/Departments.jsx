@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { fetchCompanies } from '../../Redux/action'
+import { fetchCompanies } from '../../Redux/TicketReducer/action'
 import { useSelector , useDispatch } from 'react-redux'
 import CompanyCard from '../Small/CompanyCard'
 import AddCompany from '../Small/AddCompany'
@@ -11,7 +11,7 @@ export default function Departments(){
         dispatcher(fetchCompanies())
     }, [])
 
-    const companies = useSelector(state => state.companies )
+    const companies = useSelector(state => state.ticket.companies )
 
     return (
         <div>

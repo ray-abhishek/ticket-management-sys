@@ -10,25 +10,25 @@ In a muncipality, there are numerous departments relating to Sanitation, Water S
 Covers below use cases :-
 1. User can raise a new ticket for any of the listed departments
 
-    ![N|Solid](https://i.imgur.com/gc0GxLO.png)
+    ![N|Solid](https://i.imgur.com/lsKb0AG.png)
 
 
 2. A new department can be created. 
 
-    ![N|Solid](https://i.imgur.com/XNkX3HZ.png)
+    ![N|Solid](https://i.imgur.com/SlYHHGn.png)
 
 
 3. A ticket can be responded to with further comments and either put on Pending, On Hold or Solved. 
     
-    ![N|Solid](https://i.imgur.com/LK29ave.png)
+    ![N|Solid](https://i.imgur.com/mmRM2S5.png)
 
 
-     ![N|Solid](https://i.imgur.com/IUzQdg6.png)
+     ![N|Solid](https://i.imgur.com/zh8t9Qj.png)
 
 
 4. Dashboard displays graphical representations on the nature of overall data. To do so, it has a pie chart showing how many tickets are in Pending, On Hold and Solved. It also has a bar chart showing the tickets department wise. 
 
-    ![N|Solid](https://i.imgur.com/4ujUBXh.png)
+    ![N|Solid](https://i.imgur.com/8jKManv.png)
 
 
 
