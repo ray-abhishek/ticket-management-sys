@@ -24,7 +24,7 @@ const initialState = {
     count : []
 }
 
-export default function reducer( state = initialState , { type , payload }){
+export default function ticketReducer( state = initialState , { type , payload }){
 
     console.log(type," is action type while payload is ",payload," while initial State is ",initialState)
 
