@@ -31,7 +31,7 @@ export default function SignIn({changeSignUp}){
     return (
         <form className={classes.root} onSubmit={(e)=>{
             e.preventDefault()
-            dispatcher(loginUser({"phoneNo":phone,"password":password}))
+            dispatcher(loginUser({"phone":phone,"password":password}))
         }}>
             <TextField required label="Mobile Number" value={phone} onChange={(e)=>setPhone(e.target.value)}/>
             <TextField required label="Password" type="password" value={password} onChange={(e)=>setPassword(e.target.value)}/>

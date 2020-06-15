@@ -111,13 +111,13 @@ const fetchCompanies = () => {
     }
 }
 
-const fetchTickets = () => {
+const fetchTickets = (payload) => {
 
     console.log("fetchTickets called ")
     return dispatch => {
         console.log("Registering Request")
         dispatch(registerRequest())
-        return axios.get("http://127.0.0.1:5000/fetch/tickets").then(res => {
+        return axios.post("http://127.0.0.1:5000/fetch/tickets",payload).then(res => {
             console.log("fetch tickets success",res.data)
             return dispatch(updateTickets(res.data))
         })
@@ -125,13 +125,13 @@ const fetchTickets = () => {
     }
 }
 
-const fetchStatus = () => {
+const fetchStatus = (payload) => {
 
     console.log("fetchStatus called ")
     return dispatch => {
         console.log("Registering Request")
         dispatch(registerRequest())
-        return axios.get("http://127.0.0.1:5000/fetch/status").then(res => {
+        return axios.post("http://127.0.0.1:5000/fetch/status",payload).then(res => {
             console.log("fetch status success",res.data)
             return dispatch(updateStatus(res.data))
         })
@@ -139,13 +139,13 @@ const fetchStatus = () => {
     }
 }
 
-const fetchCount = () => {
+const fetchCount = (payload) => {
 
     console.log("fetchCount called ")
     return dispatch => {
         console.log("Registering Request")
         dispatch(registerRequest())
-        return axios.get("http://127.0.0.1:5000/fetch/count").then(res => {
+        return axios.post("http://127.0.0.1:5000/fetch/count",payload).then(res => {
             console.log("fetch count success",res.data)
             return dispatch(updateCount(res.data))
         })

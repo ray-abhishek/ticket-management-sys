@@ -2,7 +2,7 @@ import React from 'react'
 import { Card, CardContent, CardActionArea, Typography, CardActions, Button } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom'
-
+import { useSelector } from 'react-redux'
 
 const useStyles = makeStyles({
     root: {
@@ -23,6 +23,7 @@ const useStyles = makeStyles({
 
 export default function CompanyCard({company}){
     const classes = useStyles();
+    const { user , loginToken } = useSelector(state => state.auth)
 
     return (
         <Card className={classes.root}>
@@ -35,13 +36,15 @@ export default function CompanyCard({company}){
             </CardContent>
             </CardActionArea>
             <CardActions>
-            <Link to={{pathname: "/raise",
+            {
+                loginToken.length>0 && 
+                <Link to={{pathname: "/raise",
                        state : company}}>
-                           
-                <Button size="small" color="secondary">
-                    Raise Ticket
-                </Button>
-            </Link>
+                           <Button size="small" color="secondary">
+                                Raise Ticket
+                            </Button>
+                </Link>
+            }
             </CardActions>
         </Card>
     )

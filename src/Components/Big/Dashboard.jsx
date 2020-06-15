@@ -9,10 +9,12 @@ import Legend from '../Small/Legend'
 export default function Dashboard(){
 
     const dispatcher = useDispatch()
+    const { user , loginToken } = useSelector(state => state.auth)
     useEffect(()=>{
         console.log("Fetching Companies through useEffect")
-        dispatcher(fetchStatus())
-        dispatcher(fetchCount())
+        
+        dispatcher(fetchStatus({'user':user}))
+        dispatcher(fetchCount({'user':user}))
     }, [])
     const margin = {top: 20, right: 20, bottom: 30, left: 30};
     const statuses = useSelector(state => state.ticket.status )
@@ -39,26 +41,28 @@ export default function Dashboard(){
 
     return (
         <div className="row">
-            <div style={pieContainer} className="col-sm-12 col-md-6 mt-sm-5">
-            <h5>Status Wise Ticket Count</h5>
-            <div style={rowStyle}>
-            <div style={pieStyle}>
-            <PieChart
-                data={[
-            { title: 'On Hold', value: onhold, color: '#E38627' },
-            { title: 'Pending', value: pending, color: '#C13C37' },
-            { title: 'Solved', value: solved, color: 'green'},
-                    ]} 
-                label={ ( {dataEntry} ) => dataEntry.value }
+            { loginToken.length>0 ? <><div style={pieContainer} className="col-sm-12 col-md-6 mt-sm-5">
+                <h5>Status Wise Ticket Count</h5>
+                <div style={rowStyle}>
+                    <div style={pieStyle}>
+                    <PieChart
+                        data={[
+                    { title: 'On Hold', value: onhold, color: '#E38627' },
+                    { title: 'Pending', value: pending, color: '#C13C37' },
+                    { title: 'Solved', value: solved, color: 'green'},
+                            ]} 
+                    label={ ( {dataEntry} ) => dataEntry.value }
                     />
 
-            </div>
-            <Legend />
-            </div>
-            </div>
+                    </div>
+                    <Legend />
+                </div>
+              </div>
             <div style={barContainer} className="col-sm-12 col-md-6">
                     <CountChart ticketCount={countData} ticketCompany={companyData}/>
-            </div>
+            </div></> : 
+            <div style={warningStyle}>Please login to view the dashboard.</div>
+            }
         </div>
     )
 }
@@ -93,4 +97,13 @@ const barContainer = {
 const dashboardStyle = {
     display : 'flex',
     justifyContent : 'space-evenly'
+}
+
+const warningStyle = {
+    width : '100%',
+    height : '100%',
+    display : 'flex',
+    flexDirection : 'column',
+    alignItems : 'center',
+    justifyContent : 'center'
 }

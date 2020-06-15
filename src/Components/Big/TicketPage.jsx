@@ -5,16 +5,19 @@ import TicketsTable from '../Small/TicketsTable'
 
 export default function TicketPage(){
     const dispatcher = useDispatch()
+    const { user , loginToken } = useSelector(state => state.auth)
     useEffect(()=>{
         console.log("Fetching Tickets through useEffect")
-        dispatcher(fetchTickets())
+        
+        dispatcher(fetchTickets({'user':user}))
     }, [])
 
     const ticketData = useSelector(state => state.ticket.tickets )
 
     return (
         <div style={containterStyle}>
-            <TicketsTable tickets={ticketData}/>
+            {loginToken.length>0 ? <TicketsTable tickets={ticketData}/> 
+            : <div style={warningStyle}>Please login to view the tickets.</div>}
         </div>
     )
     
@@ -22,4 +25,13 @@ export default function TicketPage(){
 
 const containterStyle = {
     padding : 0
+}
+
+const warningStyle = {
+    width : '100%',
+    height : '100%',
+    display : 'flex',
+    flexDirection : 'column',
+    alignItems : 'center',
+    justifyContent : 'center'
 }

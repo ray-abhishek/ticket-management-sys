@@ -27,6 +27,7 @@ export default function RaiseTicketForm(){
     const dispatcher = useDispatch()
     const [ titleValue , setTitleValue ] = useState('')
     const [ descValue , setDescValue ] = useState('')
+    const { user , loginToken } = useSelector(state => state.auth)
     console.log(location.state," refers to company against which ticket is being raised")
     var todaysDate = new Date()
     todaysDate = todaysDate.toISOString()
@@ -36,14 +37,18 @@ export default function RaiseTicketForm(){
             { raised===false? 
             <form className={classes.root} onSubmit={(e)=>{
               e.preventDefault()
+              console.log(location.state[0],"location.state[0]")
+              console.log(user[0],"user[0]")
               dispatcher(addTicket({"title":titleValue,
                   "company":location.state[1],
                   "description":descValue,
                   "raisedOn":todaysDate,
-                  "status":"Pending"
+                  "status":"Pending",
+                  "company_id":location.state[0],
+                  "user_id":user[0]
                 }))
               setRaised(true)
-            }}>
+            }}> 
                 <TextField required label="Title" placeholder="Enter Title. . ." value={titleValue} onChange={(e)=>setTitleValue(e.target.value)}/>
                 <TextField disabled label="Company" placeholder="Enter Company. . ." defaultValue={location.state[1]}/>
 

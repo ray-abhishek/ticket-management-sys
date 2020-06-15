@@ -12,7 +12,7 @@ export default function Departments(){
     }, [])
 
     const companies = useSelector(state => state.ticket.companies )
-
+    const { user , loginToken } = useSelector(state => state.auth)
     return (
         <div>
             <div  style={flexStyle}>
@@ -22,7 +22,7 @@ export default function Departments(){
                 }): <div>Unable to load Companies</div>
                 
             }
-            <AddCompany />
+            {loginToken.length>0 && user[4]==="admin" && <AddCompany /> }
             </div>
         </div>
     )

@@ -25,8 +25,8 @@ export default function TicketsTable({tickets}){
     const handleChangeRowsPerPage = (event) => {
         setRowsPerPage(parseInt(event.target.value, 10))
         setPage(0)
-    }
-
+    } 
+    console.log(tickets," are tickets")
     return (
         <TableContainer component={Paper} style={tableStyle}>
             <Table className={classes.table} size="small">
@@ -37,6 +37,7 @@ export default function TicketsTable({tickets}){
             <TableCell>Assigned To</TableCell>
             <TableCell>Status</TableCell>
             <TableCell>Raised On</TableCell>
+            <TableCell>Raised By</TableCell>
           </TableRow>
         </TableHead>
                 <TableBody>
@@ -53,14 +54,17 @@ export default function TicketsTable({tickets}){
                             state : ticket}}>{ticket[1]}</Link>  
               </TableCell>
               <TableCell style={{ width: 160 }} >
-                {ticket[5]}
+                {ticket[4]}
               </TableCell>
               <TableCell style={{ width: 160 }} >
-                  <Button variant="outlined" color={ticket[4]==='Pending'?"primary" : ticket[4]==='On Hold' ? "secondary" : "green"}>{ticket[4]}</Button>
+                  <Button variant="outlined" color={ticket[4]==='Pending'?"primary" : ticket[3]==='On Hold' ? "secondary" : "green"}>{ticket[3]}</Button>
                 
               </TableCell>
               <TableCell style={{ width: 160 }} >
-                {ticket[3].slice(0,ticket[3].lastIndexOf('00:00:00'))}
+                {ticket[5].slice(0,ticket[5].lastIndexOf('00:00:00'))}
+              </TableCell>
+              <TableCell style={{ width: 160 }} >
+                {ticket[8]}
               </TableCell>
             </TableRow>
           ))}

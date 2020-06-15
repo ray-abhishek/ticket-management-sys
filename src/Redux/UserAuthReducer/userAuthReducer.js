@@ -13,7 +13,7 @@ const initialState = {
     isLoading : false,
     loginToken : '',
     user : {},
-    error : ''
+    error : 'false'
 }
 
 export default function authReducer( state = initialState , { type , payload }){
@@ -26,20 +26,28 @@ export default function authReducer( state = initialState , { type , payload }){
             return {
                 ...state,
                 isLoading : true,
+                error : 'false',
             }
         case LOGIN_USER:
             console.log("LOGIN_USER called")
+            if(payload.error==="false")
             return {
                 ...state,
                 loginToken : payload.token,
-                user : payload.user,
+                user : payload.user.user[0],
                 isLoading : false, 
+            }
+            else
+            return {
+                ...state,
+                error : payload.error,
+                isLoading : false
             }
         case LOGOUT_USER:
             console.log("LOGOUT_USER called")
             return {
                 ...state,
-                loginToken : 0,
+                loginToken : '',
                 isLoading : false
             }
         case SIGNUP_USER:

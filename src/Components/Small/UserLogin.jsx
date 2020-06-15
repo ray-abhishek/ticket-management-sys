@@ -9,7 +9,7 @@ export default function UserLogin(){
     const [ signUp, setSignUp ] = useState(false)
 
     return(
-        <div>
+        <div style={formStyle}>
             <div style={rowFlex}>
                 { signUp===false ? <h2 style={headingStyle}>Sign in</h2> : 
                 <div style={rowFlex}>

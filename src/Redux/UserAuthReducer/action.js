@@ -20,11 +20,10 @@ const userLogin = (payload) => {
     }
 }
 
-const userLogout = (payload) => {
+const userLogout = () => {
     console.log("userLogout called")
     return {
         type : LOGOUT_USER,
-        payload : payload 
     }
 }
 
@@ -58,10 +57,10 @@ const loginUser = (payload) => {
     
     return dispatch => {
         console.log("Registering Request")
-        dispatch(registerRequest())
+        dispatch(requestSent())
         return axios.post("http://127.0.0.1:5000/login",payload).
         then(res => {
-            console.log("login success")
+            console.log("login success",res.data)
             return dispatch(userLogin(res.data))
         }).
         catch(err => dispatch(errorLogin(err)))
@@ -75,10 +74,10 @@ const signupUser = (payload) => {
     
     return dispatch => {
         console.log("Registering Request")
-        dispatch(registerRequest())
+        dispatch(requestSent())
         return axios.post("http://127.0.0.1:5000/signup",payload).
         then(res => {
-            console.log("signup success")
+            console.log("signup success",res.data)
             return dispatch(userSignup(res.data))
         }).
         catch(err => dispatch(errorSignup(err)))
@@ -86,6 +85,7 @@ const signupUser = (payload) => {
 }
 
 export {
+    REQUEST_SENT,
     LOGIN_USER,
     LOGOUT_USER,
     SIGNUP_USER, 

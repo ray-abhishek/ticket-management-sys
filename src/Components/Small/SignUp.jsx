@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { TextField, Button } from '@material-ui/core'
+import { TextField, Button, FormControl, Select, FormHelperText, MenuItem } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles';
 import { useDispatch , useSelector } from "react-redux"
 import { signupUser } from '../../Redux/UserAuthReducer/action'
@@ -27,11 +27,12 @@ export default function SignUp({changeSignUp}){
     const [ phone , setPhone ] = useState('')
     const [ password , setPassword ] = useState('')
     const [ name , setName ] = useState('')
+    const [ role , setRole ] = useState('user')
     const dispatcher = useDispatch()
 
     return (
         <form className={classes.root} onSubmit={(e)=>{ e.preventDefault()
-            dispatcher(signupUser({"phoneNo":phone,"password":password}))
+            dispatcher(signupUser({"name":name,"phone":phone,"password":password}))
             changeSignUp(false)
         }}>
 
@@ -40,6 +41,18 @@ export default function SignUp({changeSignUp}){
             <TextField required label="Mobile Number" helperText="You'll be signing in using this phone number." value={phone} onChange={(e)=>setPhone(e.target.value)}/>
             
             <TextField required label="Password" type="password" value={password} onChange={(e)=>setPassword(e.target.value)}/>
+
+            <FormControl>
+
+                <Select
+                  labelId="role"
+                  value={role}
+                  onChange={(e)=>setRole(e.target.value)}>
+                      <MenuItem value="user">User</MenuItem>
+                      <MenuItem value="admin">Admin</MenuItem>
+                </Select>
+              <FormHelperText>Role</FormHelperText>
+            </FormControl>
 
             <Button type="submit" color="primary" variant="outlined" className="mt-3">Sign Up</Button>
 
